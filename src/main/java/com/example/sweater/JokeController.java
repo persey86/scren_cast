@@ -1,8 +1,7 @@
 package com.example.sweater;
 
 import com.example.sweater.domain.DtoJoke;
-import com.example.sweater.repos.DaoRepos;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.sweater.repos.DaoReposImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,7 @@ import java.util.List;
 @RestController
 public class JokeController {
 
-	@Autowired
-	private DaoRepos daoRepos;
+	private DaoReposImpl daoRepos;
 
 
 	@GetMapping("/jokes/{count}")

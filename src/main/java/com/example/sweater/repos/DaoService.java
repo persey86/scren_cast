@@ -5,10 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface DaoService extends JpaRepository {
+public interface DaoService extends JpaRepository<DtoJoke, Long> {
 
 	List<DtoJoke> findByType(Type type);
-
-	List<DtoJoke> findTop100ById();
 
 }
