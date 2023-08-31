@@ -19,7 +19,7 @@ public class DaoReposImpl implements DaoRepos {
 		List<DtoJoke> result;
 // TODO get count of pages
 		if (count == 1) {
-			DtoJoke one = daoService.getOne((long) count);
+			DtoJoke one = (DtoJoke) daoService.getOne((long) count);
 			result = new ArrayList<>();
 			result.add(one);
 		} else {
