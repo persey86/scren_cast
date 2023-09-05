@@ -4,7 +4,7 @@
 <@c.page>
     Add new user
 <#--    <#if message != "">-->
-<#--    ${message}-->
+    ${message?ifExists}
 <#--    </#if>-->
     <@l.login "/registration" />
 </@c.page>
