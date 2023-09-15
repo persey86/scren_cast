@@ -54,19 +54,19 @@
                 </div>
             </div>
 
-            <div class="col-sm-6">
-                <div class="g-recaptcha" data-sitekey="${captchaKey}"></div>
-<#--                <form action="?" method="POST">-->
-<#--                    <div class="g-recaptcha" data-sitekey="${captchaKey}"></div>-->
-<#--                    <br/>-->
-<#--                    <input type="submit" value="Submit">-->
-<#--                </form>-->
-                <#if captchaError??>
-                    <div class="alert alert-danger" role="alert">
-                        ${captchaError}
-                    </div>
-                </#if>
-            </div>
+<#--            <div class="col-sm-6">-->
+<#--                <div class="g-recaptcha" data-sitekey="${captchaKey}"></div>-->
+<#--&lt;#&ndash;                <form action="?" method="POST">&ndash;&gt;-->
+<#--&lt;#&ndash;                    <div class="g-recaptcha" data-sitekey="${captchaKey}"></div>&ndash;&gt;-->
+<#--&lt;#&ndash;                    <br/>&ndash;&gt;-->
+<#--&lt;#&ndash;                    <input type="submit" value="Submit">&ndash;&gt;-->
+<#--&lt;#&ndash;                </form>&ndash;&gt;-->
+<#--                <#if captchaError??>-->
+<#--                    <div class="alert alert-danger" role="alert">-->
+<#--                        ${captchaError}-->
+<#--                    </div>-->
+<#--                </#if>-->
+<#--            </div>-->
 
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
@@ -77,7 +77,7 @@
 
 <#macro logout>
     <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <button class="btn btn-primary" type="submit">Sign Out</button>
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+        <button class="btn btn-primary" type="submit"><#if user??>Sign Out<#else>Log in</#if></button>
     </form>
 </#macro>
