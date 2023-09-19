@@ -4,7 +4,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <form method="get" action="/main" class="form-inline">
-                <input type="text" name="filter" class="form-control" value="${filter?ifExists}" placeholder="Search by tag">
+                <input type="text" name="filter" class="form-control" value="${filter?ifExists}" placeholder="Search by tag"></input>
                 <button type="submit" class="btn btn-primary ml-2">Search</button>
             </form>
         </div>
@@ -25,7 +25,7 @@
                     </#if>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг">
+                    <input type="text" class="form-control" value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг"></input>
                     <#if tagError??>
                         <div class="invalid-feedback">
                             ${tagError}
@@ -34,11 +34,11 @@
                 </div>
                 <div class="form-group">
                     <div class="custom-file">
-                        <input type="file" name="file" id="customFile">
+                        <input type="file" name="file" id="customFile"></input>
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 </div>
-                <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                <input type="hidden" name="_csrf" value="${_csrf.token}"></input>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>
                 </div>
@@ -48,12 +48,12 @@
 
     <div class="card-columns">
         <#list messages as message>
-            <div class="card my-3">
+            <div class="card my-3" >
                 <#if message.filename??>
-                    <img src="/img/${message.filename}" class="card-img-top">
+                    <img src="/img/${message.filename}" class="card-img-top"></img>
                 </#if>
-                <div class="m-2">
-                    <span>${message.text}</span>
+                <div class="m-2" id="message-list" >
+                    <span data-id="${message.id}">${message.text}</span>
                     <i>${message.tag}</i>
                 </div>
                 <div class="card-footer text-muted">
