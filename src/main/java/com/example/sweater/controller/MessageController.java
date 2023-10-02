@@ -5,6 +5,7 @@ import com.example.sweater.domain.User;
 import com.example.sweater.domain.dto.MessageDto;
 import com.example.sweater.repos.MessageRepo;
 import com.example.sweater.service.MessageService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -30,6 +31,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Controller
+@Slf4j
 public class MessageController {
 
 	@Autowired
@@ -57,6 +59,9 @@ public class MessageController {
 		model.addAttribute("page", page);
 		model.addAttribute("url", "/main");
 		model.addAttribute("filter", filter);
+
+		page.forEach(msg -> log.debug("Here some message: {}", msg.toString()));
+
 		return "main";
 	}
 
